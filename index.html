@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's for Brunch?</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/twy4lix.css">
+
+
+    <style>
+
+        /* STYLE FOR THE INPUT FIELD */
+        #charInput1 {
+
+        }
+
+        #charInput2 {
+
+        }
+
+        /* STYLE FOR THE SUBMIT BUTTON */
+        #submitButton {
+
+        }
+
+        /* STYLE FOR THE IMAGE */
+        #displayedImage {
+            display: none; /* This line is mandatory */
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1 class="title"> What's <br> For <br> Lunch?</h1>
+
+
+
+    <!-- IMAGE TO DISPLAY -->
+    
+
+    <div class="container">
+        <div class="menu">
+            <div id="rectangle_menu">
+                <p class="menu_title">Special <br> <span id="script-fonts">Lunch</span> <br> Menu</p>
+                <div class="menu_menu">
+                    <div class="menu-name-price">
+                        <p class="menu_name01">Everything Rice</p>
+                        <p class="menu_price">1-10$</p>
+                    </div>
+                        <p class="menu_description">chewy jasmine rice with things you might like (or not)</p>
+                </div>
+
+                <div class="menu_menu">
+                    <div class="menu-name-price">
+                        <p class="menu_name02">Everything Salad</p>
+                        <p class="menu_price">10-20$</p>
+                    </div>
+                        <p class="menu_description">organic mixed green salad with things you might like (or not)</p>
+                </div>
+
+                <div class="menu_menu">
+                    <div class="menu-name-price">
+                        <p class="menu_name03">Everything Noodles</p>
+                        <p class="menu_price">20-25$</p>
+                    </div>
+                        <p class="menu_description">high quality rice noodles with things you might like (or not)</p>
+                </div>
+
+
+                <div class="submit-container">
+                    <select id="charInput1" name="charInput1">
+                        <option value="A"> A </option>
+                        <option value="B"> B </option>
+                        <option value="C"> C </option>
+                        <option value="D"> D </option>
+                        <option value="E"> E </option>
+                        <option value="F"> F </option>
+                        <option value="G"> G </option>
+                        <option value="H"> H </option>
+                        <option value="I"> I </option>
+                        <option value="J"> J </option>
+                        <option value="K"> K </option>
+                        <option value="L"> L </option>
+                        <option value="M"> M </option>
+                        <option value="N"> N </option>
+                        <option value="O"> O </option>
+                        <option value="P"> P </option>
+                        <option value="Q"> Q </option>
+                        <option value="R"> R </option>
+                        <option value="S"> S </option>
+                        <option value="T"> T </option>
+                        <option value="U"> U </option>
+                        <option value="V"> V </option>
+                        <option value="W"> W </option>
+                        <option value="X"> X </option>
+                        <option value="Y"> Y </option>
+                        <option value="Z"> Z </option>  
+                    </select>
+
+                    <select id="charInput2" name="charInput2">
+                        <option value="A"> A </option>
+                        <option value="B"> B </option>
+                        <option value="C"> C </option>
+                        <option value="D"> D </option>
+                        <option value="E"> E </option>
+                        <option value="F"> F </option>
+                        <option value="G"> G </option>
+                        <option value="H"> H </option>
+                        <option value="I"> I </option>
+                        <option value="J"> J </option>
+                        <option value="K"> K </option>
+                        <option value="L"> L </option>
+                        <option value="M"> M </option>
+                        <option value="N"> N </option>
+                        <option value="O"> O </option>
+                        <option value="P"> P </option>
+                        <option value="Q"> Q </option>
+                        <option value="R"> R </option>
+                        <option value="S"> S </option>
+                        <option value="T"> T </option>
+                        <option value="U"> U </option>
+                        <option value="V"> V </option>
+                        <option value="W"> W </option>
+                        <option value="X"> X </option>
+                        <option value="Y"> Y </option>
+                        <option value="Z"> Z </option>  
+                    </select>
+
+                </div>
+
+                <!-- BUTTON TO DISPLAY IMAGE -->
+                    <button onclick="displayImage()" id="submitButton">Place order</button>
+                
+            </div>
+        </div>
+
+        <div class="plate">
+            <img id="plate" src="PIC/PLATE.png">
+            <img id="displayedImage" src="" alt="Displayed Image">
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Image Display Script Below -->
+    <script>
+
+        
+
+
+        function displayImage() {
+            const imgElement = document.getElementById("displayedImage");
+
+            const input1_letter = document.getElementById("charInput1").value;
+            const input2_letter = document.getElementById("charInput2").value;
+
+
+            //Letter
+            
+            
+            //Number
+            const input1_number = input1_letter.charCodeAt(0); //Converts the letter to a number (https://www.ascii-code.com); For instance, 'A' is 65 in ASCII
+            const input2_number = input2_letter.charCodeAt(0); //Converts the letter to a number (https://www.ascii-code.com); For instance, 'A' is 65 in ASCII
+
+
+
+            //HINT 3: You can perform simple math operations on the variables
+            //Arithmetic: https://www.w3schools.com/js/js_arithmetic.asp
+            let mymathresult = input2_number - input1_number;
+            console.log(mymathresult); //Console is a way to show a value in the console inspector
+            
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "A") { 
+                imgElement.src = "PIC/145/Rice-A.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "B") { 
+                imgElement.src = "PIC/145/Rice-Steak.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "C") { 
+                imgElement.src = "PIC/145/Rice-FriedChicken.png"
+                imgElement.style.display = "block";
+            }
+
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "D") { 
+                imgElement.src = "PIC/145/Rice-DriedShrimp.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "E") { 
+                imgElement.src = "PIC/145/Rice-OnsenEgg.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "F") { 
+                imgElement.src = "PIC/145/Rice-Sashimi.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "G") { 
+                imgElement.src = "PIC/145/Rice-G.PNG"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "H") { 
+                imgElement.src = "PIC/145/Rice-Ham.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "I") { 
+                imgElement.src = "PIC/145/RIce-FakeCrap.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter =="J") { 
+                imgElement.src = "PIC/145/Rice-Jalapen.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "K") { 
+                imgElement.src = "PIC/145/Rice-Kimchi.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "L") { 
+                imgElement.src = "PIC/145/Rice-L.PNG"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "M") { 
+                imgElement.src = "PIC/145/Rice-Shitake.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "N") { 
+                imgElement.src = "PIC/145/Rice-Natto.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "O") { 
+                imgElement.src = "PIC/145/Rice-Okra.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "P") { 
+                imgElement.src = "PIC/145/Rice-RedPork.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "Q") { 
+                imgElement.src = "PIC/145/Rice-QuailEgg.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "R") { 
+                imgElement.src = "PIC/145/Rice-Tartare.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "S") { 
+                imgElement.src = "PIC/145/Rice-Shrimp.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "T") { 
+                imgElement.src = "PIC/145/Rice-Tofu.png"
+                imgElement.style.display = "block";
+            }
+            
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "U") { 
+                imgElement.src = ""
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "V") { 
+                imgElement.src = "PIC/145/Rice-VegTempura.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "W" ) { 
+                imgElement.src = "PIC/145/Rice-Wakame.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "X") { 
+                imgElement.src = "PIC/145/Rice-Tempeh.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "Y") { 
+                imgElement.src = "PIC/145/Rice-TofuSkin.png"
+                imgElement.style.display = "block";
+            }
+
+            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter === "Z") { 
+                imgElement.src = "PIC/145/Rice-Kaigoong.png"
+                imgElement.style.display = "block";
+            }
+
+    
+        /*more than 145 but less than or equal to 161*/
+            
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "A") {
+                imgElement.src = "PIC/161/161-A.PNG"
+                imgElement.style.display = "block";
+            }
+            
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "B") {
+                imgElement.src = "PIC/161/161-B.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "C") {
+                imgElement.src = "PIC/161/161-C.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "D") {
+                imgElement.src = "PIC/161/161-D.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "E") {
+                imgElement.src = "PIC/161/161-E.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "F") {
+                imgElement.src = "PIC/161/161-F.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 &&& input1_letter == "G") {
+                imgElement.src = "PIC/161/161-G.PNG"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "H") {
+                imgElement.src = "PIC/161/161-H.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "I") {
+                imgElement.src = "PIC/161/161-I.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "J") {
+                imgElement.src = "PIC/161/161-J.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "K") {
+                imgElement.src = "PIC/161/161-K.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "L") {
+                imgElement.src = "PIC/161/161-L.PNG"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "M") {
+                imgElement.src = "PIC/161/161-M.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "N") {
+                imgElement.src = "PIC/161/161-N.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "o") {
+                imgElement.src = "PIC/161/161-O.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "P") {
+                imgElement.src = "PIC/161/161-P.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "Q") {
+                imgElement.src = "PIC/161/161-Q.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "R") {
+                imgElement.src = "PIC/161/161-R.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "S") {
+                imgElement.src = "PIC/161/161-S.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "T") {
+                imgElement.src = "PIC/161/161-T.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "U") {
+                imgElement.src = ""
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "V") {
+                imgElement.src = "PIC/161/161-V.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "W") {
+                imgElement.src = "PIC/161/161-W.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "X") {
+                imgElement.src = "PIC/161/161-X.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 &&& input1_letter == "Y") {
+                imgElement.src = "PIC/161/161-Y.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "Z") {
+                imgElement.src = "PIC/161/161-Z.png"
+                imgElement.style.display = "block";
+            } 
+
+
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "H") {
+                imgElement.src = "PIC/180/180-H.png"
+                imgElement.style.display = "block";
+            }            
+
+             
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "I") {
+                imgElement.src = "PIC/180/180-I.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "J") {
+                imgElement.src = "PIC/180/180-J.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "K") {
+                imgElement.src = "PIC/180/180-K.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "L") {
+                imgElement.src = "PIC/161/161-Z.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "M") {
+                imgElement.src = "PIC/180/180-M.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "N") {
+                imgElement.src = "PIC/180/180-N.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "O") {
+                imgElement.src = "PIC/180/180-O.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "P") {
+                imgElement.src = "PIC/180/180-P.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "Q") {
+                imgElement.src = "PIC/180/180-Q.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "R") {
+                imgElement.src = "PIC/180/180-R.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "S") {
+                imgElement.src = "PIC/180/180-S.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "T") {
+                imgElement.src = "PIC/180/180-T.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "U") {
+                imgElement.src = "PIC/161/161-Z.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "V") {
+                imgElement.src = "PIC/180/180-V.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "W") {
+                imgElement.src = "PIC/180/180-W.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "X") {
+                imgElement.src = "PIC/180/180-X.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "Y") {
+                imgElement.src = "PIC/180/180-Y.png"
+                imgElement.style.display = "block";
+            }
+
+            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "Z") {
+                imgElement.src = "PIC/180/180-Z.png"
+                imgElement.style.display = "block";
+            }
+
+
+            else if(mymathresult === 0) {
+                imgElement.src = "PIC/180/180-Failed.PNG";
+                imgElement.style.display = "block";
+            }
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //Remember to use if else statements to capture error conditions
+
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+body{
+    background-image: url('/PIC/PICNIC-CLOTH.jpg');
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+.title{
+    font-family: "gigalypse", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 8rem;
+    text-align: center;
+    line-height: 110px;
+    color: yellow;
+    -webkit-text-stroke: black 1px;
+}
+
+
+
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 7em;
+
+}
+
+
+#rectangle_menu{
+    width: 400px;
+    height: 870px;
+    background-color: rgb(160, 233, 255);
+    margin-right: 2em;
+    align-items: baseline;
+    margin-top: -2rem;
+    
+
+}
+
+
+#plate{
+    width: 700px;
+    justify-content: right;
+    margin-left: 2em;
+    position: absolute;
+    margin-top: 4rem;
+}
+
+
+#displayedImage{
+    position: relative;
+}
+
+
+
+#script-fonts{
+    font-family: ballet-variable, sans-serif;
+    font-style: normal;
+    font-weight: 550;
+    line-height: 60px;
+    font-size: 4.4rem;
+    text-transform: none;
+    margin-left: -26px;
+    margin-top: 250px;
+    
+}
+
+
+.menu_title{
+    font-family: "forma-djr-banner", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 3rem;
+    line-height: 44px;
+    text-align: left;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    color: rgb(58, 83, 30);
+    margin-bottom: 4rem;
+}
+
+
+.menu-name-price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.menu_price{
+    font-family: "franklin-gothic-compressed", sans-serif;
+    font-weight: 200;
+    font-style: normal; 
+    padding-right: 2rem;
+    padding-top: 1.7rem;
+}
+
+
+
+.menu_name01{
+    font-family: "quita", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 55px;
+    font-size: 2rem;
+    padding-left: 1.5rem;
+    margin-top: 30px;
+    color: rgb(58, 83, 30);
+    
+}
+
+
+.menu_name02{
+    font-family: "quita", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 55px;
+    font-size: 2rem;
+    padding-left: 1.5rem;
+    margin-top: 6rem;
+    color: rgb(58, 83, 30);
+    margin-top: 2rem;
+    
+}
+
+
+.menu_name03{
+    font-family: "quita", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 55px;
+    font-size: 2rem;
+    padding-left: 1.5rem;
+    margin-top: 6rem;
+    color: rgb(58, 83, 30);
+    margin-top: 2rem;
+    
+}
+
+
+.menu_description{
+    font-family: "forma-djr-banner", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: -35px;
+    line-height: 20px;
+    color: rgb(58, 83, 30);
+
+
+}
+
+
+#charInput1 {
+    width: 150px;
+    height: 50px;
+    margin-left: 2rem;
+    margin-top: -30px;
+    text-align: center;
+
+}
+
+
+#charInput2 {
+    width: 150px;
+    height: 50px;
+    margin-top: -30px;
+    text-align: center;
+
+}
+
+
+
+.submit-container{
+    margin-top: 5.5rem;
+    display: flex;
+    align-items: center;
+    padding-left: 1.5rem;
+    
+}
+
+
+
+#submitButton {
+    margin-top: 1rem;
+    width: 100px;
+    height: 45px;
+    border-radius: 20px;
+    margin-left: 2rem;
+    font-family: "franklin-gothic-compressed", sans-serif;
+    font-weight: 200;
+    font-style: normal; 
+    font-size: 18px;
+    justify-content: right;
+    background-color: yellow;
+    float: right;
+    margin-right: 2rem;
+}
+
+
+[src="PIC/180/180-Failed.PNG"]{
+
+    width: 750px;
+    margin-top: -2px;
+    padding-top: 2rem;
+
+}
