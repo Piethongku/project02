@@ -33,44 +33,18 @@
 </head>
 <body>
 
-    <h1 class="title"> What's <br> For <br> Lunch?</h1>
-
-
+    <h1 class="title"> "WHAT COULD<br> POSSIBLY <br> GO WRONG?"</h1>
+    <div class="subtitle">
+        <p class="sub-title">sandwich edition</p>
+        <p class="sub-sub-title">(with surprises .  .  .  . if you can find it)</p>
+    </div>
 
     <!-- IMAGE TO DISPLAY -->
     
-
     <div class="container">
-        <div class="menu">
-            <div id="rectangle_menu">
-                <p class="menu_title">Special <br> <span id="script-fonts">Lunch</span> <br> Menu</p>
-                <div class="menu_menu">
-                    <div class="menu-name-price">
-                        <p class="menu_name01">Everything Rice</p>
-                        <p class="menu_price">1-10$</p>
-                    </div>
-                        <p class="menu_description">chewy jasmine rice with things you might like (or not)</p>
-                </div>
-
-                <div class="menu_menu">
-                    <div class="menu-name-price">
-                        <p class="menu_name02">Everything Salad</p>
-                        <p class="menu_price">10-20$</p>
-                    </div>
-                        <p class="menu_description">organic mixed green salad with things you might like (or not)</p>
-                </div>
-
-                <div class="menu_menu">
-                    <div class="menu-name-price">
-                        <p class="menu_name03">Everything Noodles</p>
-                        <p class="menu_price">20-25$</p>
-                    </div>
-                        <p class="menu_description">high quality rice noodles with things you might like (or not)</p>
-                </div>
-
-
                 <div class="submit-container">
                     <select id="charInput1" name="charInput1">
+                        <option value="" selected disabled> Select your base </option>
                         <option value="A"> A </option>
                         <option value="B"> B </option>
                         <option value="C"> C </option>
@@ -100,6 +74,7 @@
                     </select>
 
                     <select id="charInput2" name="charInput2">
+                        <option value="" selected disabled> Select toppings</option>
                         <option value="A"> A </option>
                         <option value="B"> B </option>
                         <option value="C"> C </option>
@@ -128,26 +103,33 @@
                         <option value="Z"> Z </option>  
                     </select>
 
-                </div>
 
                 <!-- BUTTON TO DISPLAY IMAGE -->
-                    <button onclick="displayImage()" id="submitButton">Place order</button>
-                
-            </div>
-        </div>
 
-        <div class="plate">
-            <img id="plate" src="PIC/PLATE.png">
-            <img id="displayedImage" src="" alt="Displayed Image">
-        </div>
+                    <button onclick="displayImage()" id="submitButton">Place order</button>
+
+            </div>
+
+
+                    <div class="plate">
+                        <img id="plate" src="PIC/PLATE.PNG"> 
+                        <div class="plate-top">
+                            <img id="displayedImage" src="" alt="">
+                            <img id="displayedImage2" src="" alt="">
+                            <img id="displayedImage3" src="" alt="">
+                            <img id="failed" src="PIC/Failed.png" alt="Failed">
+                        </div>
+                    </div>
 
     </div>
 
+                
+            
+
+       
 
 
-
-
-
+    </div>
 
 
 
@@ -160,403 +142,307 @@
 
         function displayImage() {
             const imgElement = document.getElementById("displayedImage");
+            const imgElement2 = document.getElementById("displayedImage2");
+            const imgElement3 = document.getElementById("displayedImage3");
+            const Plate = document.getElementById("plate");
+            const failed = document.getElementById("failed");
+        
 
+
+
+            //Letter
             const input1_letter = document.getElementById("charInput1").value;
             const input2_letter = document.getElementById("charInput2").value;
 
 
-            //Letter
-            
-            
-            //Number
             const input1_number = input1_letter.charCodeAt(0); //Converts the letter to a number (https://www.ascii-code.com); For instance, 'A' is 65 in ASCII
             const input2_number = input2_letter.charCodeAt(0); //Converts the letter to a number (https://www.ascii-code.com); For instance, 'A' is 65 in ASCII
 
 
-
-            //HINT 3: You can perform simple math operations on the variables
-            //Arithmetic: https://www.w3schools.com/js/js_arithmetic.asp
-            let mymathresult = input2_number - input1_number;
-            console.log(mymathresult); //Console is a way to show a value in the console inspector
-            
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "A") { 
-                imgElement.src = "PIC/145/Rice-A.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "B") { 
-                imgElement.src = "PIC/145/Rice-Steak.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "C") { 
-                imgElement.src = "PIC/145/Rice-FriedChicken.png"
-                imgElement.style.display = "block";
-            }
-
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "D") { 
-                imgElement.src = "PIC/145/Rice-DriedShrimp.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "E") { 
-                imgElement.src = "PIC/145/Rice-OnsenEgg.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "F") { 
-                imgElement.src = "PIC/145/Rice-Sashimi.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "G") { 
-                imgElement.src = "PIC/145/Rice-G.PNG"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "H") { 
-                imgElement.src = "PIC/145/Rice-Ham.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "I") { 
-                imgElement.src = "PIC/145/RIce-FakeCrap.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter =="J") { 
-                imgElement.src = "PIC/145/Rice-Jalapen.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "K") { 
-                imgElement.src = "PIC/145/Rice-Kimchi.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "L") { 
-                imgElement.src = "PIC/145/Rice-L.PNG"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "M") { 
-                imgElement.src = "PIC/145/Rice-Shitake.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "N") { 
-                imgElement.src = "PIC/145/Rice-Natto.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "O") { 
-                imgElement.src = "PIC/145/Rice-Okra.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "P") { 
-                imgElement.src = "PIC/145/Rice-RedPork.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "Q") { 
-                imgElement.src = "PIC/145/Rice-QuailEgg.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "R") { 
-                imgElement.src = "PIC/145/Rice-Tartare.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "S") { 
-                imgElement.src = "PIC/145/Rice-Shrimp.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "T") { 
-                imgElement.src = "PIC/145/Rice-Tofu.png"
-                imgElement.style.display = "block";
-            }
-            
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "U") { 
-                imgElement.src = ""
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "V") { 
-                imgElement.src = "PIC/145/Rice-VegTempura.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "W" ) { 
-                imgElement.src = "PIC/145/Rice-Wakame.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "X") { 
-                imgElement.src = "PIC/145/Rice-Tempeh.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter == "Y") { 
-                imgElement.src = "PIC/145/Rice-TofuSkin.png"
-                imgElement.style.display = "block";
-            }
-
-            if(mymathresult >= 1 && mymathresult <= 10 && input1_letter === "Z") { 
-                imgElement.src = "PIC/145/Rice-Kaigoong.png"
-                imgElement.style.display = "block";
-            }
-
     
-        /*more than 145 but less than or equal to 161*/
-            
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "A") {
-                imgElement.src = "PIC/161/161-A.PNG"
-                imgElement.style.display = "block";
-            }
-            
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "B") {
-                imgElement.src = "PIC/161/161-B.png"
-                imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "C") {
-                imgElement.src = "PIC/161/161-C.png"
-                imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "D") {
-                imgElement.src = "PIC/161/161-D.png"
+            if (input1_letter === "A") {
+                imgElement.src = "PIC/Base/A.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "E") {
-                imgElement.src = "PIC/161/161-E.png"
+            } else if (input1_letter === "B") {
+                imgElement.src = "PIC/Base/B.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "F") {
-                imgElement.src = "PIC/161/161-F.png"
+            }  else if (input1_letter === "C") {
+                imgElement.src = "PIC/Base/C.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 &&& input1_letter == "G") {
-                imgElement.src = "PIC/161/161-G.PNG"
+            }  else if (input1_letter === "D") {
+                imgElement.src = "PIC/Base/D.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "H") {
-                imgElement.src = "PIC/161/161-H.png"
+            }  else if (input1_letter === "E") {
+                imgElement.src = "PIC/Base/E.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "I") {
-                imgElement.src = "PIC/161/161-I.png"
+            }  else if (input1_letter === "F") {
+                imgElement.src = "PIC/Base/F.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "J") {
-                imgElement.src = "PIC/161/161-J.png"
+            }  else if (input1_letter === "G") {
+                imgElement.src = "PIC/Base/G.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "K") {
-                imgElement.src = "PIC/161/161-K.png"
+            }  else if (input1_letter === "H") {
+                imgElement.src = "PIC/Base/H.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "L") {
-                imgElement.src = "PIC/161/161-L.PNG"
+            }  else if (input1_letter === "I") {
+                imgElement.src = "PIC/Base/I.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "M") {
-                imgElement.src = "PIC/161/161-M.png"
+            }  else if (input1_letter === "J") {
+                imgElement.src = "PIC/Base/J.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "N") {
-                imgElement.src = "PIC/161/161-N.png"
+            }  else if (input1_letter === "K") {
+                imgElement.src = "PIC/Base/K.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "o") {
-                imgElement.src = "PIC/161/161-O.png"
+            }  else if (input1_letter === "L") {
+                imgElement.src = "PIC/Base/L.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "P") {
-                imgElement.src = "PIC/161/161-P.png"
+            }  else if (input1_letter === "M") {
+                imgElement.src = "PIC/Base/M.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "Q") {
-                imgElement.src = "PIC/161/161-Q.png"
+            }  else if (input1_letter === "N") {
+                imgElement.src = "PIC/Base/N.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "R") {
-                imgElement.src = "PIC/161/161-R.png"
+            }  else if (input1_letter === "O") {
+                imgElement.src = "PIC/Base/O.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "S") {
-                imgElement.src = "PIC/161/161-S.png"
+            }  else if (input1_letter === "P") {
+                imgElement.src = "PIC/Base/P.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "T") {
-                imgElement.src = "PIC/161/161-T.png"
+            }  else if (input1_letter === "Q") {
+                imgElement.src = "PIC/Base/Q.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "U") {
-                imgElement.src = ""
+            }  else if (input1_letter === "R") {
+                imgElement.src = "PIC/Base/R.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "V") {
-                imgElement.src = "PIC/161/161-V.png"
+            }  else if (input1_letter === "S") {
+                imgElement.src = "PIC/Base/S.PNG";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "W") {
-                imgElement.src = "PIC/161/161-W.png"
+            }  else if (input1_letter === "T") {
+                imgElement.src = "PIC/Base/T.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "X") {
-                imgElement.src = "PIC/161/161-X.png"
+            }  else if (input1_letter === "U") {
+                imgElement.src = "PIC/Base/U.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 &&& input1_letter == "Y") {
-                imgElement.src = "PIC/161/161-Y.png"
+            }  else if (input1_letter === "V") {
+                imgElement.src = "PIC/Base/V.png";
                 imgElement.style.display = "block";
-            }
 
-            else if (mymathresult > 10 && mymathresult <= 20 && input1_letter == "Z") {
-                imgElement.src = "PIC/161/161-Z.png"
+            }  else if (input1_letter === "W") {
+                imgElement.src = "PIC/Base/W.png";
                 imgElement.style.display = "block";
+
+            }  else if (input1_letter === "X") {
+                imgElement.src = "PIC/Base/X.png";
+                imgElement.style.display = "block";
+
+            }  else if (input1_letter === "Y") {
+                imgElement.src = "PIC/Base/Y.png";
+                imgElement.style.display = "block";
+
+            }  else if (input1_letter === "Z") {
+                imgElement.src = "";
+                imgElement.style.display = "block";
+
             } 
 
 
+            //INPUT 2 CONDITIONS//
 
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "H") {
-                imgElement.src = "PIC/180/180-H.png"
-                imgElement.style.display = "block";
-            }            
 
-             
+            if (input2_letter === "A") {
+                imgElement2.src = "PIC/Toppings/TP - A.png";
+                imgElement2.style.display = "block";
 
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "I") {
-                imgElement.src = "PIC/180/180-I.png"
-                imgElement.style.display = "block";
+            }  else if (input2_letter === "B") {
+                imgElement2.src = "PIC/Toppings/TP - B.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "C") {
+                imgElement2.src = "PIC/Toppings/TP - C.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "D") {
+                imgElement2.src = "PIC/Toppings/TP - D.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "E") {
+                imgElement2.src = "PIC/Toppings/TP - E.png";
+                imgElemen2t.style.display = "block";
+
+            } else if (input2_letter === "F") {
+                imgElement2.src = "PIC/Toppings/TP - F.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "G") {
+                imgElement2.src = "PIC/Toppings/TP - G.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "H") {
+                imgElement2.src = "PIC/Toppings/TP - H.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "I") {
+                imgElement2.src = "PIC/Toppings/TP - I.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "J") {
+                imgElement2.src = "PIC/Toppings/TP - J.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "K") {
+                imgElement2.src = "PIC/Toppings/TP - K.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "L") {
+                imgElement2.src = "PIC/Toppings/TP - L.png";
+                imgElemen2t.style.display = "block";
+
+            } else if (input2_letter === "M") {
+                imgElement2.src = "PIC/Toppings/TP - M.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "N") {
+                imgElement2.src = "PIC/Toppings/TP - N.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "O") {
+                imgElement2.src = "PIC/Toppings/TP - O.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "P") {
+                imgElement2.src = "PIC/Toppings/TP - P.PNG";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "Q") {
+                imgElement2.src = "PIC/Toppings/TP - Q.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "R") {
+                imgElement2.src = "PIC/Toppings/TP - R.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "S") {
+                imgElement2.src = "PIC/Toppings/TP - S.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "T") {
+                imgElement2.src = "PIC/Toppings/TP - T.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "U") {
+                imgElement2.src = "";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "V") {
+                imgElement2.src = "PIC/Toppings/TP - V.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "W") {
+                imgElement2.src = "PIC/Toppings/TP - W.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "X") {
+                imgElement2.src = "PIC/Toppings/TP - X.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "Y") {
+                imgElement2.src = "PIC/Toppings/TP - Y.png";
+                imgElement2.style.display = "block";
+
+            } else if (input2_letter === "Z") {
+                imgElement2.src = "PIC/Toppings/TP - Z.png";
+                imgElement2.style.display = "block";
+
+            } 
+
+        
+            if (input1_letter === "" || input2_letter === "") {            
+                failed.src = "PIC/Failed.png";
+                failed.style.display = "block";
+
+                imgElement.style.display = "none";
+                imgElement2.style.display = "none";
+                imgElement3.style.display = "none";
+            } 
+
+
+            if (input1_letter === "" || input2_letter === "") {            
+                failed.src = "PIC/Failed.png";
+                failed.style.display = "block";
+
+                imgElement.style.display = "none";
+                imgElement2.style.display = "none";
+                imgElement3.style.display = "none";
+
+                
+            } else {
+                failed.style.display = "none";
             }
 
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "J") {
-                imgElement.src = "PIC/180/180-J.png"
-                imgElement.style.display = "block";
+            //Number
+            
+
+
+            let mymathresult = input1_number + input2_number ;
+             console.log(mymathresult); //Console is a way to show a value in the console inspector
+            
+
+             if (mymathresult == 135) { 
+                imgElement3.src = "PIC/Surprise/135.png";
+                imgElement3.style.display = "block";
+            
+            } else if (mymathresult == 145) { 
+                imgElement3.src = "PIC/Surprise/145.png";
+                imgElement3.style.display = "block";
+
+            } else if (mymathresult == 150) { 
+                imgElement3.src = "PIC/Surprise/150.png";
+                imgElement3.style.display = "block";
+
+            } else if (mymathresult == 155) { 
+                imgElement3.src = "PIC/Surprise/155.png";
+                imgElement3.style.display = "block";
+
+            } else if (mymathresult == 160) { 
+                imgElement3.src = "PIC/Surprise/160.png";
+                imgElement3.style.display = "block";
+
+
+            } else if (mymathresult == 165) { 
+                imgElement3.src = "PIC/Surprise/165.png";
+                imgElement3.style.display = "block";
+
+            } else if (mymathresult == 175) { 
+                imgElement3.src = "PIC/Surprise/175.png";  // Use correct file if needed
+                imgElement3.style.display = "block";
+
+            } else {
+                imgElement3.style.display = "none";
+            
             }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "K") {
-                imgElement.src = "PIC/180/180-K.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "L") {
-                imgElement.src = "PIC/161/161-Z.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "M") {
-                imgElement.src = "PIC/180/180-M.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "N") {
-                imgElement.src = "PIC/180/180-N.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "O") {
-                imgElement.src = "PIC/180/180-O.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "P") {
-                imgElement.src = "PIC/180/180-P.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "Q") {
-                imgElement.src = "PIC/180/180-Q.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "R") {
-                imgElement.src = "PIC/180/180-R.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "S") {
-                imgElement.src = "PIC/180/180-S.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "T") {
-                imgElement.src = "PIC/180/180-T.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "U") {
-                imgElement.src = "PIC/161/161-Z.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "V") {
-                imgElement.src = "PIC/180/180-V.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "W") {
-                imgElement.src = "PIC/180/180-W.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "X") {
-                imgElement.src = "PIC/180/180-X.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "Y") {
-                imgElement.src = "PIC/180/180-Y.png"
-                imgElement.style.display = "block";
-            }
-
-            else if (mymathresult > 20 && mymathresult <= 25 && input1_letter == "Z") {
-                imgElement.src = "PIC/180/180-Z.png"
-                imgElement.style.display = "block";
-            }
-
-
-            else if(mymathresult === 0) {
-                imgElement.src = "PIC/180/180-Failed.PNG";
-                imgElement.style.display = "block";
-            }
-           
-
-
-
-
-
-
-
-
 
 
 
